@@ -1,0 +1,48 @@
+#footer {
+    margin-top: auto;
+    position: relative;
+    width: 100%;
+    height: auto;
+    bottom: 0;
+    z-index: 1;
+    background-color: #8c8c8c;
+    text-align: center;
+}
+
+#footer .col{
+    margin: 15px 0px 15px 0px;
+}
+
+#footer span{
+    color: #bfbfbf;
+}
+
+#footer p{
+    color: #bfbfbf;
+    display: inline;
+    margin: 0px 12px;
+}
+
+#footer a:link{
+    color: #bfbfbf;
+    text-decoration: none;
+}
+
+#footer a:visited{
+    color: #bfbfbf;
+}
+
+
+/* Add responsiveness - on screens less than 759px wide, display the navbar vertically instead of horizontally */
+@media screen and (max-width: 759px) {
+
+    #footer span{
+        color: transparent;
+    }
+
+    #footer p{
+        display: inherit;
+    }
+
+
+}

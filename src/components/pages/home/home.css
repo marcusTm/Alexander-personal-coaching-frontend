@@ -1,0 +1,18 @@
+
+
+#content {
+	max-width: 920px;
+    margin: 0px auto;
+}
+
+
+
+
+
+
+
+
+/* Add responsiveness - on screens less than 759px wide, display the navbar vertically instead of horizontally */
+@media screen and (max-width: 759px) {
+
+}
