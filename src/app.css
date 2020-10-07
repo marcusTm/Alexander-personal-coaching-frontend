@@ -1,16 +1,18 @@
 #page-container {
-    width: 100%;
+    position: relative;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
 }
+
+
 
 * {
     box-sizing: border-box;
 } 
 
-
-body {
+html, body {
+    height: auto;
     margin: 0;
     font-family: 'melior', serif;
     -webkit-font-smoothing: antialiased;

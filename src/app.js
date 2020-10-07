@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from './components/header/navbar';
-import Content from './components/content/content'
+import Main from './components/main/content'
 import Footer from './components/footer/footer';
 import './app.css'
 
@@ -10,8 +10,10 @@ export default class App extends Component {
         return(
             <div id="page-container">
                 <Header />
-                <Content />
-                <Footer />
+                <div id="content-and-footer">
+                    <Main />
+                    <Footer />
+                </div>
             </div>
         );
     }

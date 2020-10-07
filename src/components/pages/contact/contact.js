@@ -1,5 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import axios from 'axios';
+import Alert from 'react-bootstrap/Alert'
+import Button from 'react-bootstrap/Button'
 
 export default class Contact extends Component {
 
@@ -8,14 +10,14 @@ export default class Contact extends Component {
         message: '',
         emailAddress: '',
         sent: false,
-        buttonText: 'Send Message'
+        buttonText: 'Send besked'
     }
 
     handleSubmit = async (e) => {
         e.preventDefault()
 
         this.setState({
-            buttonText: '...sending'
+            buttonText: '...sender besked'
         })
 
         let CustomerMessage = {
@@ -32,13 +34,20 @@ export default class Contact extends Component {
                 Accept: 'application/json',
                 'Content-Type': 'application/json'
               }} )
-                .then(res => {
-                    console.log(res);
-                    console.log(res.data);
+                .then(response => {
+                    console.log(response);
+                    console.log(response.data);
+                    if(response.data === "SUCCESS") {
+                        alert("Beskeden blev ikke sendt."); 
+                        this.setState({ sent: true }, this.resetForm());
+                        AlertDismissible();
+                    } else if (response.data === "FAIL") {
+                        alert("Beskeden blev ikke sendt."); 
+                        this.setState({ sent: false }, this.resetForm());
+                    }
                 })
-            this.setState({ sent: true }, this.resetForm())
         } catch(err) {
-            console.log(err)
+            console.log(err);
         }
 
     }
@@ -48,7 +57,7 @@ export default class Contact extends Component {
             name: '',
             message: '',
             emailAddress: '',
-            buttonText: 'Send Message'
+            buttonText: 'Send besked'
         })
     }
 
@@ -81,7 +90,11 @@ export default class Contact extends Component {
                                         ?
                                         <button type="submit" className="button button-primary">{this.state.buttonText}</button>
                                         :
+                                        <div>
+
                                         <button className="button button-disabled">Message Sent</button>
+                                        <AlertDismissible/>
+                                        </div>
                                         }
                                     </div>
 
@@ -93,4 +106,27 @@ export default class Contact extends Component {
 			</div>
         );
     }
+}
+
+function AlertDismissible() {
+    const [show, setShow] = useState(true);
+  
+    return (
+      <>
+        <Alert show={show} variant="success">
+          <Alert.Heading>How's it going?!</Alert.Heading>
+          <p>
+            Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget
+            lacinia odio sem nec elit. Cras mattis consectetur purus sit amet
+            fermentum.
+          </p>
+          <hr />
+          <div className="d-flex justify-content-end">
+            <Button onClick={() => setShow(false)} variant="outline-success">
+              Close me y'all!
+            </Button>
+          </div>
+        </Alert>
+      </>
+    );
 }

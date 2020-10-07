@@ -4,9 +4,10 @@ import { Link, NavLink } from 'react-router-dom';
 
 export default class Navbar extends React.Component {
 
+    /*
     componentDidMount() {
         window.addEventListener("scroll", this.resizeHeaderOnScroll);
-    }
+    } 
 
     resizeHeaderOnScroll() {
         const distanceY = window.pageYOffset || document.documentElement.scrollTop,
@@ -29,20 +30,17 @@ export default class Navbar extends React.Component {
             logoEl.style.outlineWidth = "8px";
             navbarrightEl.style.padding = "133px 50px 0px 0px";
         }
-    }
+    } */
   
     render() {
         return (
             <div id="navbar">
-                    <div id="navbar-content"> 
-                        <div id="navbar-logo">
-                            <Link to={'/'} className="nav-link" id="logo">Mind Over Body</Link>
-                        </div>
+                    <div id="navbar-content">
+                        <Link to={'/'} className="nav-link" id="navbar-logo">Mind Over Body</Link>
                         <div id="navbar-right">
                             <NavLink to={'/about-me'} className="nav-link">OM MIG</NavLink>
-                            <NavLink to={'/training-programs'} className="nav-link">PROGRAMMER & E-BØGER</NavLink>
-                            <NavLink to={'/clients'} className="nav-link">KLIENTER</NavLink>
                             <NavLink to={'/processes'} className="nav-link">FORLØB</NavLink>
+                            <NavLink to={'/clients'} className="nav-link">MINE KLIENTER</NavLink>
                             <NavLink to={'/contact'} className="nav-link">KONTAKT</NavLink>
                         </div>
                     </div>

@@ -1,37 +1,74 @@
-/* Display some links to the right */
-#navbar-right {
-    transition: all 1s ease 0s;
-    float: right;
-    padding: 133px 50px 0px 0px;
+#navbar-content {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    padding: 0px 100.5px;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
-  
+
+#navbar-logo { 
+    color: white; 
+    font: bold 30px Helvetica, Arial, Sans-Serif;
+    text-shadow: 1px 1px #ea0c16, 
+                 2px 2px #ea0c16, 
+                 3px 3px #ea0c16;
+    transition:      all 0.12s ease-out;
+}
+
+#navbar-logo:link {
+    text-decoration: none;
+}
+
+#navbar-logo:hover {
+    color: white;
+    
+    text-shadow: 1px 1px #ea0c16, 
+                 2px 2px #ea0c16, 
+                 3px 3px #ea0c16, 
+                 4px 4px #ea0c16, 
+                 5px 5px #ea0c16, 
+                 6px 6px #ea0c16;
+}
+
+#navbar-right {
+    margin-top: 15px;
+}
+
 /* Style the navbar links */
 #navbar-right a {
     float: left;
-    color: black;
+    color: white;
     text-align: center;
     padding: 10px 10px;
-    margin: 0px 14px;
+    margin: 0px 12px;
     text-decoration: none;
-    font-size: 18px;
-    line-height: 25px;
-    border-radius: 10px;
+    font-size: 17px;
+    border-radius: 5px;
 }
   
 /* Links on mouse-over */
+/*
 #navbar-right a:hover {
     border-bottom-right-radius: 0px;
     border-bottom-left-radius: 0px;
     border-bottom: 3px solid white;
     position: relative;
     box-shadow: 0px 9px 5px -5px rgba(00,00,00,0.2);
+}*/
+
+#navbar-right .nav-link:hover {
+  background-color:rgb(255, 255, 255, 0.3)
 }
-  
-/* Style the active/current link */
+
+/* Style the active/current link */ 
+/*
 #navbar-right a.active {
     background-color: #744db3;
     box-shadow: 3px 3px 5px 0px rgba(00,00,00,0.2);
-}
+}*/
 
 
 
